@@ -6,7 +6,7 @@ import store from './store/index';
 
 Vue.use(VueRouter);
 
-const router = new VueRouter({
+export const router = new VueRouter({
   //mode: history here will change hash router to a browser router
   mode: 'history',
   routes: [

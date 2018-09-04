@@ -1,5 +1,6 @@
 import api from '../../api/imgur';
 import qs from 'qs';
+import { router } from '../../main';
 
 //persisting local storage
 const state = {
@@ -20,9 +21,12 @@ const actions = {
     const query = qs.parse(hash.replace('#', ''));
     commit('setToken', query.access_token);
     window.localStorage.setItem('imgur_token', query.access_token);
+    //import router, send user to root route now
+    router.push('/');
   },
   logout: ({ commit }) => {
     commit('setToken', null);
+    window.localStorage.removeItem('imgur_token');
   }
 };
 
