@@ -1,6 +1,7 @@
 <template>
   <div class="ui secondary pointing menu">
     <a href="/" class="active item">Image Storage</a>
+    {{ isLoggedIn }}
     <div class="right menu">
       <a href="#" class="ui item" @click="login">Login</a>
     </div>
@@ -9,9 +10,11 @@
 
 <script>
 //we will import mapActions from vuex to call the action to this component
-import { mapActions } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 export default {
   name: 'AppHeader',
+  //methods modify data or react to events inside of our component, computed reads data and gets access to it inside our template
+  computed: mapGetters(['isLoggedIn']),
   methods: mapActions(['login'])
 };
 // you sill sometimes see syntax as methods: {...mapActions(['login'])}, this would allow you to use other methods in addition, it is unnecessary if you only have one method;
