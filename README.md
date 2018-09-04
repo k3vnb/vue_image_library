@@ -11,6 +11,8 @@ App for logging in & uploading pictures - Practice with Vue, Vue-router and Vuex
 ```
 npm install
 ```
+Get a Client Id from Imgur, create a .env file at project root, and add:
+exports.apiKey = 'Your Client Id Here';
 
 #### Compiles and hot-reloads for development
 ```
