@@ -17,12 +17,12 @@ export default {
     //window.location navigates window to IMGUR oath page w/ querystring
     window.location = `${ROOT_URL}/oauth2/authorize?${qs.stringify(querystring)}`;
   },
-  fetchImages(){
+  fetchImages(token){
     // axios.get takes 2 args here: https string & according to imgur api docs, we must provide: header w/ access token attached to Bearer
     return axios.get(`${ROOT_URL}/3/account/me/images`, {
       headers: {
-        Authorization: `Bearer ${}`
+        Authorization: `Bearer ${token}`
       }
-    })
+    });
   }
 };
