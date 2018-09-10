@@ -9,11 +9,12 @@ const getters = {
 }
 
 const actions = {
-  fetchImages({ rootState }) {
+  async fetchImages({ rootState }) {
     //rootState is all of state held in our Vuex Store -- rootState gives us ability to reach into other modules and access data/state stored within. So rootState.auth is accessing the auth module
     rootState.auth.token;
     //above line can also be written as: const { token } = rootState.auth;
-    api.fetchImages(token);
+    const response = await api.fetchImages(token);
+    console.log(response);
   }
 }
 
