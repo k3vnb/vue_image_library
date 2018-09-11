@@ -4,6 +4,7 @@ import App from './App';
 import AuthHandler from './components/AuthHandler';
 import ImageList from './components/ImageList';
 import UploadForm from './components/UploadForm';
+import Calc from './components/Calc';
 import store from './store/index';
 
 Vue.use(VueRouter);
@@ -14,7 +15,8 @@ export const router = new VueRouter({
   routes: [
     { path: '/', component: ImageList },
     { path: '/upload', component: UploadForm },
-    { path: '/oauth2/callback', component: AuthHandler }
+    { path: '/oauth2/callback', component: AuthHandler },
+    { path: '/calc', component: Calc }
   ]
 });
 
