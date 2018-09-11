@@ -49,8 +49,11 @@ export default {
   },
   computed: {
     calcPayment: function(e){
-      var p = this.price - this.downPayment;
-      return p || 0;
+      let p = this.price - this.downPayment;
+      let r = this.rate/1200;
+      let l = this.length * 12;
+      let i = Math.pow((1+r),l);
+      return (p * r * i)/(i - 1) || 0;
     }
   }
 };
