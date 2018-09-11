@@ -53,7 +53,8 @@ export default {
       let r = this.rate/1200;
       let l = this.length * 12;
       let i = Math.pow((1+r),l);
-      return (p * r * i)/(i - 1) || 0;
+      let amt = (p * r * i)/(i - 1) || 0;
+      return amt.toFixed(2) ;
     }
   }
 };
