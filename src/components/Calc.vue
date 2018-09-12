@@ -29,14 +29,19 @@
         </div>
       </div>
     </div>
+    <NewChart></NewChart>
   </div>
 </template>
 
 <script>
 // import { mapActions, mapGetters } from 'vuex';
+import NewChart from './NewChart';
 
 export default {
   name: 'Calc',
+  components: {
+    NewChart
+  },
   data: function () {
     return {
       count: 0,
